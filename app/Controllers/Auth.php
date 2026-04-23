@@ -19,11 +19,11 @@ class Auth extends BaseController
     /**
      * Display login page
      */
-    public function login(): string
+    public function login()
     {
         // If already logged in, redirect to dashboard
         if (session()->get('isLoggedIn')) {
-            return redirect()->to('/admin/dashboard')->send();
+            return redirect()->to('/admin/dashboard');
         }
 
         $data = [

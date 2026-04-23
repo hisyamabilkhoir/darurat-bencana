@@ -95,7 +95,8 @@ class FonteService
     {
         $tanggal = date('d M Y H:i', strtotime($laporan['tanggal']));
 
-        $message = "🚨 *Laporan Bencana Baru*\n\n";
+        $message = "📢 *Notification System*\n";
+        $message .= "🚨 *Laporan Bencana Baru*\n\n";
         $message .= "📋 *Kategori:* {$laporan['kategori']}\n";
         $message .= "📍 *Lokasi:* {$laporan['lokasi']}\n";
         $message .= "👤 *Pelapor:* {$laporan['nama_pelapor']}\n";

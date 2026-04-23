@@ -88,12 +88,12 @@ class Home extends BaseController
         if ($foto && $foto->isValid() && !$foto->hasMoved()) {
             // Validate file
             $validationRules = [
-                'foto' => 'uploaded[foto]|max_size[foto,2048]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png,image/webp]',
+                'foto' => 'uploaded[foto]|max_size[foto,10240]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png,image/webp]',
             ];
             if (!$this->validate($validationRules)) {
                 return $this->response->setJSON([
                     'success' => false,
-                    'errors'  => ['foto' => 'File harus berupa gambar (JPG/PNG/WebP) dan maksimal 2MB.'],
+                    'errors'  => ['foto' => 'File harus berupa gambar (JPG/PNG/WebP) dan maksimal 10MB.'],
                 ]);
             }
 
